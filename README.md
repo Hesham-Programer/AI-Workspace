@@ -1,6 +1,8 @@
 # Gemini – Django Chat Interface
 
-A clean, Bootstrap‑styled Django application that provides a simple chat interface. The UI is centralized through a shared base template, making pages consistent and easy to extend.
+> A modern, responsive chat interface powered by Django and Bootstrap 5, built for clarity, speed, and extensibility.
+
+Gemini is a production‑ready foundation for conversational web experiences. It centralizes layout, assets, and UX patterns in a shared base template to ensure consistency, accessibility, and rapid iteration across pages. With CSRF‑protected forms, clean Bootstrap components, and a clear separation of concerns, the project is ideal for building assistants, knowledge bots, or Q&A tools—while remaining easy to brand, extend, and deploy.
 
 ## Features
 
@@ -9,7 +11,19 @@ A clean, Bootstrap‑styled Django application that provides a simple chat inter
 - Simple chat form with CSRF protection
 - Extensible structure for adding new pages and features
 
-## Tech Stack
+## Environment Variables
+
+Set the following environment variables before running the app (via your shell, process manager, or your hosting provider’s dashboard). Do not commit secrets to version control.
+
+Required/common variables:
+- SECRET_KEY: A long, random string used by Django for cryptographic signing (required).
+- DEBUG: true/false (use False in production).
+- ALLOWED_HOSTS: Comma‑separated list of allowed hosts (e.g., 127.0.0.1,localhost).
+- GEMINI_API_KEY or other provider keys your features require (if applicable).
+
+Examples (shell):
+
+macOS/Linux:
 
 - Python 3.13+
 - Django
