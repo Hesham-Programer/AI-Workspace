@@ -37,6 +37,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "gemini.apps.GeminiConfig",
+    "notes.apps.NotesConfig",
+    "todolist.apps.TodolistConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -52,7 +52,7 @@ def home_page(request):
 
     return render(
         request,
-        template_name="index.html",
+        template_name="gemini/index.html",
         context={
             "messages":messages,
         }
