@@ -15,7 +15,7 @@ def index(request):
             for item in TodoList.objects.all():
                 print(item.todo)
 
-            redirect("home_page")
+            return redirect("home_page")
 
         if "delete" in request.POST:
             note_id = request.POST.get("delete")
