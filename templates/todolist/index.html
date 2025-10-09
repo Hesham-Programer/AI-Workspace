@@ -5,6 +5,19 @@
     <title>Todo-List</title>
   </head>
   <body>
-    <h1>Hello world</h1>
+    <h1>Welcome</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label>
+        <input placeholder="Enter your todo name here:" type="text" name="todo">
+      </label>
+      <button type="submit" name="add">Add</button>
+      {% for todo_object in todos %}
+        <hr>
+        <span>{{ todo_object.todo }}</span>
+        <button name="delete" type="submit" value="{{ todo_object.id }}">Delete</button>
+        <a href="{% url 'edit' todo_object.id %}">Edit</a>
+      {% endfor %}
+    </form>
   </body>
 </html>

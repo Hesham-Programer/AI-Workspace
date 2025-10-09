@@ -4,23 +4,6 @@ from .models import Notes
 
 # Create your views here.
 
-class Add:
-    def __init__(self):
-        pass
-
-    def add(self, title: str, content: str):
-        Notes.objects.create(title=title, content=content)
-
-    def remove(self, note_id: int):
-        note = get_object_or_404(Notes, id=note_id)
-        note.delete()
-
-    def edit(self, note_id: int, new_title: str, new_content: str):
-        note = get_object_or_404(Notes, id=note_id)
-        note.title = new_title
-        note.content = new_content
-
-
 def index(request):
     if request.method == "POST":
         if "add" in request.POST:
