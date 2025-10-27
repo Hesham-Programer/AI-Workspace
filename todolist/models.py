@@ -7,5 +7,9 @@ class TodoList(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     completed = models.BooleanField(default=False)
 
+    class Meta:
+         ordering = ['todo']
+
     def __str__(self):
         return self.todo
+

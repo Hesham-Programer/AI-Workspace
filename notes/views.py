@@ -1,9 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Notes
 
 
 # Create your views here.
-
+@login_required(login_url="my-login")
 def index(request):
     if request.method == "POST":
         if "add" in request.POST:
@@ -27,8 +28,8 @@ def index(request):
         "notes": Notes.objects.all()
     }
     return render(request, template_name="notes/index.html", context=context)
-
-def edit(request, note_id):
+@login_required(login_url="my-login")
+def edit_note(request, note_id):
     note = get_object_or_404(Notes, id=note_id)
 
     context = {
