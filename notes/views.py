@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Notes
 
-#s
+#laptop code
 # Create your views here.
 @login_required(login_url="my-login")
 def index(request):
