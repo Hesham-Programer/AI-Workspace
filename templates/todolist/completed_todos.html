@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Completed Todos</title>
+  </head>
+  <body>
+    <h1>Completed Todos</h1>
+    <form method="post">
+      {% csrf_token %}
+      <a href="{% url 'home_page' %}">Home Page</a>
+      <br>
+      {% for todo in todos %}
+        <span>{{ todo }} : {{ todo.completed_at }}</span>
+        <br>
+      {% endfor%}
+    </form>
+  </body>
+</html>
