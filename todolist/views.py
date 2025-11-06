@@ -64,6 +64,6 @@ def edit_todo(request, todo_id):
 @login_required(login_url="my-login")
 def completed_todos(request):
     return render(request, template_name="todolist/completed_todos.html", context={
-            "todos" : TodoList.objects.filter(completed=True),
-        }
+        "todos": TodoList.objects.filter(completed=True),
+    }
     )
