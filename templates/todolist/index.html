@@ -1,5 +1,5 @@
 {% extends "navbar.html" %}
-{% block code %}
+{% block todolist %}
 <h1>Welcome</h1>
 <form method="post">
   {% csrf_token %}
@@ -15,4 +15,4 @@
     <a href="{% url 'edit' todo_object.id %}">Edit</a>
   {% endfor %}
 </form>
-{% endblock code %}
+{% endblock todolist %}

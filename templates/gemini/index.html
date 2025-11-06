@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ai-Chat</title>
-  </head>
-  <body>
-    <form method="post">
-      {% csrf_token %}
-      {% load markdown_extras %}
-      <h1>Welcome...</h1>
-      {% for message, answer in messages.items %}
-        <div>{{ message }}</div>
-        <hr>
-        <code>{{ answer|markdown_safe }}</code>
-      {% endfor %}
+{% extends 'navbar.html' %}
+{% block gemini %}
+  <form method="post">
+    {% csrf_token %}
+    {% load markdown_extras %}
+    <h1>Welcome...</h1>
+    {% for message, answer in messages.items %}
+      <div>{{ message }}</div>
+      <hr>
+      <code>{{ answer|markdown_safe }}</code>
+    {% endfor %}
 
-      <input type="text" name="message" required>
-      <button type="submit" name="send">Send</button>
-    </form>
-  </body>
-</html>
+    <input type="text" name="message" required>
+    <button type="submit" name="send">Send</button>
+  </form>
+{% endblock gemini %}

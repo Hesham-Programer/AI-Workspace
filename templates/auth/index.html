@@ -1,6 +1,9 @@
-<html>
-  <h1>This is the homepage</h1>
-  <a href="{% url 'register' %}">register</a>
-  <br>
-  <a href="{% url 'my-login' %}">Login</a>
-</html>
+{% extends 'navbar.html' %}
+{% block auth %}
+  <html>
+    <h1>This is the homepage</h1>
+    <a href="{% url 'register' %}">register</a>
+    <br>
+    <a href="{% url 'my-login' %}">Login</a>
+  </html>
+{% endblock auth %}
